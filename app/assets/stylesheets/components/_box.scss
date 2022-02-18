@@ -1,0 +1,17 @@
+.box {
+  border-radius: 4px;
+  margin: 30px 50px 50px 50px;
+  line-height: 1.8;
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  flex-grow: 1;
+  padding-left: 10x;
+  padding-right: 10px;
+}
+
+.box a {
+  text-decoration: none;
+  color: black;
+}

@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "json"
+require "open-uri"
+
+url = "http://tmdb.lewagon.com/movie/top_rated"
+poster_serialized = URI.open(url).read
+poster = JSON.parse(poster_serialized)
+
+paths = []
+  poster["results"].each do |po|
+    var = po['poster_path']
+    paths << "https://image.tmdb.org/t/p/w500#{var}"
+  end
+
+paths[0, 7].each_with_index do |path, index|
+  Movie.find(index + 95).poster_url = path
+end

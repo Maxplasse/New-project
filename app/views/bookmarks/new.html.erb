@@ -1,0 +1,12 @@
+<div class="new-banner">
+</div>
+  <div class="container">
+  <h2>New Bookmark</h2>
+    <div class="box">
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.association :movie %>
+        <%= f.input :comment %>
+        <%= f.submit "New bookmark", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
