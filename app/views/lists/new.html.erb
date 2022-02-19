@@ -4,6 +4,7 @@
   <div class="box">
     <%= simple_form_for (@list) do |f| %>
       <%= f.input :name %>
+      <%= f.input :photo, as: :file, accept: "image/jpg" %>
       <%= f.submit "Add a movie list", class: "btn btn-primary" %>
     <% end %>
   </div>
